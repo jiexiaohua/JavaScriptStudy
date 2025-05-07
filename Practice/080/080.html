@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+////////////////////////
+///////js有待提升////////
+////////////////////////
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="checkbox" id="all"><label for="all">全选</label>
+    <input type="checkbox" id="notall"><label for="notall">全不选</label>
+    <br>
+    <hr>
+    <ul>
+        <li>
+            <input type="checkbox" id="shop1"><label for="shop1">商品1</label>
+        </li>
+        <li>
+            <input type="checkbox" id="shop2"><label for="shop2">商品2</label>
+        </li>
+        <li>
+            <input type="checkbox" id="shop3"><label for="shop3">商品3</label>
+        </li>
+        <li>
+            <input type="checkbox" id="shop4"><label for="shop4">商品4</label>
+        </li>
+    </ul>
+    <script>
+        var all = document.getElementById("all");
+
+        all.onclick = function()
+        {
+            if(!all.checked) return;
+            if(notall.checked) notall.checked = false;
+            for (let i = 0; i < 4; i++) {
+                let idS = "shop"+(i+1);
+                let shopline = document.getElementById(idS);
+                if(!shopline.checked)
+            {
+                shopline.checked=true;
+            }
+                
+            }
+        }
+        var notall = document.getElementById("notall");
+
+        notall.onclick = function()
+        {
+            if(!notall.checked) return;
+            if(all.checked) all.checked = false;
+            for (let i = 0; i < 4; i++) {
+                let idS = "shop"+(i+1);
+                let shopline = document.getElementById(idS);
+                if(shopline.checked)
+            {
+                shopline.checked=false;
+            }
+            }
+        }
+    </script>
+</body>
+</html>

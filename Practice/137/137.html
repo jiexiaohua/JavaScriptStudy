@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var xhr = new XMLHttpRequest();
+        xhr.open("GET","001.json");
+        xhr.send();
+        xhr.onreadystatechange = function(){
+            let position = document.getElementsByTagName("body")[0];
+            let informance = document.createElement("div");
+            let informanceP = document.createElement("p");
+            position.append(informanceP);
+            if(xhr.readyState === 4 && xhr.status === 200)
+        {
+            let text = xhr.responseText;
+            console.log(JSON.parse(text));
+        }
+            else{
+                console.log("Error");
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="#">
+        <input type="text" id="text">
+        <input type="submit" id="submit">
+    </form>
+    <script>
+        // 正则表达式
+        var reg = /abc/;
+        var submit = document.getElementById("submit");
+
+        submit.onclick = function (event) {
+            event.preventDefault(); // 阻止表单的默认提交行为
+            var textInput = document.getElementById("text");
+            var textValue = textInput.value; // 在点击时获取最新的输入值
+
+            if (textValue.search(reg) === -1) {
+                alert("Error");
+            } else {
+                alert("right");
+            }
+        }
+    </script>
+</body>
+</html>

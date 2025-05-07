@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        ul {
+            display: flex;
+            list-style: none;
+        }
+        li{
+            height: 50px;
+            line-height: 50px;
+            text-align: center;
+            flex:1;
+        }
+
+        .active{
+            color:red;
+            border-bottom: 1px solid red;
+        }
+    </style>
+</head>
+<body>
+    <ul id="choice">
+        <li>正在热映</li>
+        <li class="active">即将上映</li>
+    </ul>
+    <script>
+        var cho=document.getElementById("choice");
+        var item1=cho.children[0];
+        var item2=cho.children[1];
+        item1.onclick = function()
+        {
+            if(item2.getAttribute("class")=="active") item2.setAttribute("class","");
+            item1.setAttribute("class","active");
+        }
+        item2.onclick = function()
+        {
+            if(item1.getAttribute("class")=="active") item1.setAttribute("class","");
+            item2.setAttribute("class","active");
+        }
+    </script>
+</body>
+</html>
